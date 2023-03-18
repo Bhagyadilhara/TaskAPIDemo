@@ -10,7 +10,7 @@ namespace TaskAPI.Controllers
         [HttpGet] //method level attribute
         public IActionResult Tasks()     //can send response with status codes by using IActionResult type
         {
-            var tasks = new string[] { "Task 1", "Task 2", "Task 3" };
+            var tasks = new string[] { "Task 1", "Task 2", "Task 3", "Task 4", "Task 5" };
             return Ok(tasks); 
         }
 
