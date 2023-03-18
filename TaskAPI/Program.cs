@@ -1,3 +1,5 @@
+using TaskAPI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//builder.Services.AddSingleton(); //only one instance for application  ------- note
+//builder.Services.AddScoped(); //new object is created per request
+//builder.Services.AddTransient(); //always a new object is presented
+
+builder.Services.AddScoped<ITodoRepository, TodoService>(); //dependency injection----
+
 
 var app = builder.Build();
 
