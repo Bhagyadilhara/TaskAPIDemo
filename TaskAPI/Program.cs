@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 //builder.Services.AddScoped(); //new object is created per request
 //builder.Services.AddTransient(); //always a new object is presented
 
-builder.Services.AddScoped<ITodoRepository, TodoService>(); //dependency injection----
+builder.Services.AddScoped<ITodoRepository, TodoSqlServerService>(); //dependency injection----
 
 
 var app = builder.Build();
