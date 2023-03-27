@@ -18,6 +18,9 @@ builder.Services.AddSwaggerGen();
 //builder.Services.AddScoped(); //new object is created per request
 //builder.Services.AddTransient(); //always a new object is presented
 
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); //inject automapper-----
+
 builder.Services.AddScoped<ITodoRepository, TodoSqlServerService>(); //dependency injection----
 builder.Services.AddScoped<IAuthorRepository, AuthorSqlServerService>();
 
