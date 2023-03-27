@@ -34,7 +34,7 @@ namespace TaskAPI.Controllers
             //    });
             //}
 
-            var mappAuthors = _mapper.Map<ICollection<AuthorDto>>(authors);
+            var mappAuthors = _mapper.Map<ICollection<AuthorDto>>(authors);  //mapper
 
             return Ok(mappAuthors);
         }
