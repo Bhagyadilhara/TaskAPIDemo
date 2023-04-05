@@ -34,9 +34,9 @@ namespace TaskAPI.Controllers
             //    });
             //}
 
-            var mappAuthors = _mapper.Map<ICollection<AuthorDto>>(authors);  //mapper
+            var mappedAuthors = _mapper.Map<ICollection<AuthorDto>>(authors);  //mapper
 
-            return Ok(mappAuthors);
+            return Ok(mappedAuthors);
         }
 
         [HttpGet("{id}")]
@@ -49,9 +49,9 @@ namespace TaskAPI.Controllers
                 return NotFound();  
             }
 
-            var mappAuthor = _mapper.Map<AuthorDto>(author);   
+            var mappedAuthor = _mapper.Map<AuthorDto>(author);   
 
-            return Ok(mappAuthor);
+            return Ok(mappedAuthor);
         }
     }
 }
