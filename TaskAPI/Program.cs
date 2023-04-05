@@ -1,5 +1,6 @@
 using TaskAPI.Services.Todos;
 using TaskAPI.Services.Authors;
+using Microsoft.AspNetCore.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +32,17 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+else
+{
+    app.UseExceptionHandler(app =>
+    {
+        app.Run(async context =>
+        {
+            context.Response.StatusCode = 500;
+            await context.Response.WriteAsync("There was an error in the server! Please contact developer.");    
+        });
+    });
 }
 
 app.UseHttpsRedirection();

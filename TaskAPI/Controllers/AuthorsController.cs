@@ -21,18 +21,9 @@ namespace TaskAPI.Controllers
         [HttpGet]
         public ActionResult<ICollection<AuthorDto>> GetAuthors()
         {
-            var authors = _service.GetAllAuthors();
-            //var authorsDto = new List<AuthorDto>();
+            throw new Exception("Test error");
 
-            //foreach(var author in authors)
-            //{
-            //    authorsDto.Add(new AuthorDto
-            //    {
-            //        Id = author.Id,
-            //        FullName = author.FullName,
-            //        Address = $"{author.AddressNo}, {author.Street}, {author.City}"
-            //    });
-            //}
+            var authors = _service.GetAllAuthors();
 
             var mappedAuthors = _mapper.Map<ICollection<AuthorDto>>(authors);  //mapper
 
