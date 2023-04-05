@@ -21,7 +21,7 @@ namespace TaskAPI.Controllers
         [HttpGet]
         public ActionResult<ICollection<AuthorDto>> GetAuthors()
         {
-            throw new Exception("Test error");
+            throw new Exception("Test error"); //test Exception
 
             var authors = _service.GetAllAuthors();
 
