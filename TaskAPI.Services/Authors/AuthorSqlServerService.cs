@@ -29,7 +29,8 @@ namespace TaskAPI.Services.Authors
             if (!string.IsNullOrWhiteSpace(job))
             {
                 job = job.Trim();
-                authorCollection = authorCollection.Where(a => a.JobRole == job);
+                //authorCollection = authorCollection.Where(a => a.JobRole == job);
+                authorCollection = _context.Authors.Where(a => a.JobRole == job);
             }
 
             if(!string.IsNullOrWhiteSpace(search))

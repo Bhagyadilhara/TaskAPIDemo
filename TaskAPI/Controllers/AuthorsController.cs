@@ -19,7 +19,7 @@ namespace TaskAPI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<ICollection<AuthorDto>> GetAllAuthors(string job,string search)
+        public ActionResult<ICollection<AuthorDto>> GetAuthors(string job,string search)
         {
 
             var authors = _service.GetAllAuthors(job,search);
