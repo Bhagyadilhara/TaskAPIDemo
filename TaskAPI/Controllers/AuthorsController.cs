@@ -19,11 +19,10 @@ namespace TaskAPI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<ICollection<AuthorDto>> GetAuthors()
+        public ActionResult<ICollection<AuthorDto>> GetAllAuthors(string job,string search)
         {
-            throw new Exception("Test error"); //test Exception
 
-            var authors = _service.GetAllAuthors();
+            var authors = _service.GetAllAuthors(job,search);
 
             var mappedAuthors = _mapper.Map<ICollection<AuthorDto>>(authors);  //mapper
 
