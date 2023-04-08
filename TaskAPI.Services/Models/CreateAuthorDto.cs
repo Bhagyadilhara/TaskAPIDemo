@@ -13,5 +13,8 @@ namespace TaskAPI.Services.Models
         public string? Street { get; set; }
         public string? City { get; set; }
         public string? JobRole { get; set; }
+
+
+        public ICollection<CreateTodoDto> Todos { get; set; } = new List<CreateTodoDto>();  //use this new list for null values remove
     }
 }
