@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TaskAPI.Models;
 using TaskAPI.Services.Authors;
 using TaskAPI.Services.Models;
 
@@ -42,6 +43,18 @@ namespace TaskAPI.Controllers
             var mappedAuthor = _mapper.Map<AuthorDto>(author);   
 
             return Ok(mappedAuthor);
+        }
+
+        [HttpPost]
+        public ActionResult<AuthorDto> CreateAuthor(CreateAuthorDto author)
+        {
+            var authorEntity = _mapper.Map<Author>(author);
+            var newAuthor = _service.AddAuthor(authorEntity);
+
+            var authorForReturn = _mapper.Map<AuthorDto>(newAuthor);
+
+            return CreatedAtRoute("GetAuthor", new { id = authorForReturn.Id }, authorForReturn);
+            
         }
     }
 }
