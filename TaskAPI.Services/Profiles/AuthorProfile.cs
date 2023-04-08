@@ -16,6 +16,8 @@ namespace TaskAPI.Services.Profiles
             CreateMap<Author, AuthorDto>()
                 .ForMember(dest => dest.Address,
                 opt => opt.MapFrom(src => $"{src.AddressNo}, {src.Street}, {src.City}")); //AuthorProfile
+
+            CreateMap<CreateAuthorDto, Author>();
         }
     }
 }
