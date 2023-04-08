@@ -30,7 +30,7 @@ namespace TaskAPI.Controllers
             return Ok(mappedAuthors);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetAuthor")]
         public IActionResult GetAuthor(int id)
         {
             var author = _service.GetAuthor(id);
