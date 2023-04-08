@@ -26,7 +26,7 @@ namespace TaskAPI.DataAccess
                 new Author {Id = 1, FullName="Bhagya Dilhara",AddressNo = "55",Street = "Street 1", City = "Maharagama", JobRole ="Developer"},
                 new Author {Id = 2, FullName="Mahima Induvara",AddressNo = "100",Street = "Street 2", City = "Pannipitiya", JobRole = "QA"},
                 new Author {Id = 3, FullName="Chanuka Supun",AddressNo = "64/2",Street = "Street 3", City = "Kottawa", JobRole ="Developer"},
-                new Author {Id = 3, FullName="Bhathunu Bhagya",AddressNo = "666",Street = "Street 4", City = "Piliyandala", JobRole ="System Engineer"}
+                new Author {Id = 4, FullName="Bhathunu Bhagya",AddressNo = "666",Street = "Street 4", City = "Piliyandala", JobRole ="System Engineer"}
             });
 
 
