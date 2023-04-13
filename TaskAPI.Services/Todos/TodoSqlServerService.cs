@@ -36,5 +36,11 @@ namespace TaskAPI.Services.Todos
         {
             _context.SaveChanges();
         }
+
+        public void DeleteTodo(Todo todo)
+        {
+            _context.Remove(todo);
+            _context.SaveChanges();
+        }
     }
 }

@@ -73,5 +73,20 @@ namespace TaskAPI.Controllers
             return NoContent();
         }
 
+
+        [HttpDelete("{todoId}")]
+        public ActionResult DeleteTodo(int authorId, int todoId)
+        {
+            var deletingTodo = _todoService.GetTodo(authorId, todoId);
+
+            if (deletingTodo is null)
+            {
+                return NotFound();
+            }
+
+            _todoService.DeleteTodo(deletingTodo);
+            return NoContent();
+        }
+
     }
 }
