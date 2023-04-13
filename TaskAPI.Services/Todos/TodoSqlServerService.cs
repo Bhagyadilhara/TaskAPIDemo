@@ -30,5 +30,11 @@ namespace TaskAPI.Services.Todos
 
             return _context.Todos.Find(todo.Id);
         }
+
+
+        public void UpdateTodo(Todo todo)
+        {
+            _context.SaveChanges();
+        }
     }
 }

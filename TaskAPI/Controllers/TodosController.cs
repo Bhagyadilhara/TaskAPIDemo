@@ -60,7 +60,17 @@ namespace TaskAPI.Controllers
         [HttpPut("{todoId}")]
         public ActionResult UpdateTodo(int authorId, int todoId, UpdateTodoDto todo)
         {
-            return Ok();
+            var updatingTodo = _todoService.GetTodo(authorId, todoId);
+
+            if(updatingTodo is null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(todo,updatingTodo);
+            _todoService.UpdateTodo(updatingTodo);
+
+            return NoContent();
         }
 
     }
