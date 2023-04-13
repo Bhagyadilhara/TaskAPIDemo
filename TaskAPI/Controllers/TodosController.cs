@@ -57,5 +57,11 @@ namespace TaskAPI.Controllers
         }
 
 
+        [HttpPut("{todoId}")]
+        public ActionResult UpdateTodo(int authorId, int todoId, UpdateTodoDto todo)
+        {
+            return Ok();
+        }
+
     }
 }
